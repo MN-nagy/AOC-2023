@@ -1,2 +1,2 @@
-# Advent-of-code
-my solutions for advent of code
+# AOC-23
+my solutions for advent of code 2023
