@@ -29,11 +29,6 @@ typedef enum {
   HUMIDITY_TO_LOCATION
 } MAPS;
 
-typedef struct {
-  long int start;
-  long int end;
-} Interval;
-
 void get_maps_data(FILE *file, RANGE map_range[MAX_MAPS][MAX_RANGES],
                    int map_count[]);
 void get_seeds(FILE *file, int range, char *output);
