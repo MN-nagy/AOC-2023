@@ -60,11 +60,11 @@ int main(void) {
   }
 
   long int steps = 0;
-  int z = 0;
-  std::vector<long int> y;
-  int e = currentNodes.size();
+  int zeeNodes = 0;
+  std::vector<long int> nodeSteps;
+  int numOfNodes = currentNodes.size();
 
-  while (z < e) {
+  while (zeeNodes < numOfNodes) {
     for (char dir : directions) {
       for (size_t i = 0; i < currentNodes.size(); i++) {
         if (dir == 'L') {
@@ -76,8 +76,8 @@ int main(void) {
       steps++;
       for (size_t j = 0; j < currentNodes.size();) {
         if (currentNodes[j].back() == 'Z') {
-          z++;
-          y.push_back(steps);
+          zeeNodes++;
+          nodeSteps.push_back(steps);
           currentNodes.erase(currentNodes.begin() + j);
         } else {
           j++;
@@ -86,7 +86,7 @@ int main(void) {
     }
   }
 
-  long int result = std::reduce(y.begin(),y.end(), 1L, lcm); 
+  long int result = std::reduce(nodeSteps.begin(),nodeSteps.end(), 1L, lcm); 
 
   std::cout << result << '\n';
 
